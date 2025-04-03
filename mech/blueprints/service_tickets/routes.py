@@ -19,7 +19,6 @@ def create_ticket():
     return ticket_schema.jsonify(new_ticket), 201
 
 @service_tickets_bp.route("/service_tickets", methods=['GET'])
-@cache.cached(timeout=60) #### Reduce ticket retrieval time, esp if multiple mechanics working ####
 def get_tickets():
     tickets = ServiceTicket.query.all()
     return tickets_schema.jsonify(tickets), 200

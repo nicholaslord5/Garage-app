@@ -4,7 +4,6 @@ from .schemas import mechanic_schema, mechanics_schema
 from ...extensions import db
 from ...models import Mechanic
 from marshmallow import ValidationError
-from ...extensions get
 
 @mechanics_bp.route("/", methods=['POST'])
 def create_mechanic():
